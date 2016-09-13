@@ -1,1 +1,1 @@
-powershell -File build.ps1 %*
+powershell -File build.ps1 %* -experimental

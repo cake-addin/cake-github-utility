@@ -1,4 +1,4 @@
-﻿module Cake.GithubUtility.GithubAlias
+﻿namespace Cake.GithubUtility.GithubAlias
 
 open Cake.Core
 open Cake.Core.Annotations

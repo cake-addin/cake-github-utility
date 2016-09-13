@@ -4,8 +4,8 @@
 using Cake.GithubUtility.GithubAlias;
 
 Task("Raw").Does(() => {
-    var raw = CreateRawPath("wk-j", "cake-github-utility", "Assets/logo.png");
-    Console.WriteLien(raw);
+    var raw = CreateRawPath("cake-addin", "cake-github-utility", "Assets/logo.png");
+    Console.WriteLine(raw);
 });
 
 var target = Argument("target", "default");
