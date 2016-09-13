@@ -3,10 +3,10 @@
 #addin "nuget:?package=Cake.Watch"
 #addin "nuget:?package=Cake.SquareLogo"
 
-//Func<string, string> replace = (x) => x.Replace("{id}", "Cake.GithubUtility");
+#r "./Cake.GithubUtility/bin/Debug/Cake.GithubUtility.dll"
+using Cake.GithubUtility.GithubAlias;
 
 var id = "Cake.GithubUtility";
-
 var solution = $"{id}.sln";
 var testDll = $"{id}.Tests/bin/Debug/{id}.Tests.dll";
 var debugDll = $"{id}/bin/Debug/{id}.dll";
@@ -16,6 +16,7 @@ var npi = EnvironmentVariable("npi");
 var title = $"{id}";
 var description = "Github utility for Cake";
 var projectUrl = "https://github.com/cake-addin/cake-github-utility";
+var iconUrl = CreateRawPath("cake-addin", "cake-github-utility", "Assets/logo.png");
 var releaseNotes = new[] { "New version" };
 var tags = new [] { "Cake", "Github" };
 

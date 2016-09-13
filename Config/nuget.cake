@@ -31,7 +31,7 @@ Task("Create-Nuget-Package")
                                         //NoDefaultExcludes       = true,
                                         Summary                 = description,
                                         ProjectUrl              = new Uri(projectUrl),
-                                        IconUrl                 = new Uri(projectUrl),
+                                        IconUrl                 = new Uri(iconUrl),
                                         LicenseUrl              = new Uri(projectUrl),
                                         Copyright               = "MIT",
                                         ReleaseNotes            = releaseNotes,
