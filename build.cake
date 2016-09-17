@@ -25,14 +25,28 @@ var files = new [] {
     releaseDll.Replace("Cake.GithubUtility.dll", "FSharp.Core.dll")
 };
 
+#load "Config/version.cake"
+#load "Config/compile.cake"
+#load "Config/nuget.cake"
+
 Task("Create-Logo").Does(() => {
     var settings = new LogoSettings { Background = "Black" };
     CreateLogo("G", "Assets/logo.png", settings);
 });
 
-#load "Config/version.cake"
-#load "Config/compile.cake"
-#load "Config/nuget.cake"
+Task("Example")
+    .IsDependentOn("Build-Debug")
+    .Does(() => {
+        var win = IsRunningOnWindows();
+        var ps = win ? "tools/cake/cake.exe" : "mono";
+        var args = win ? "" : "tools/cake/cake.exe";
+        var example = Argument("example", "");
+        var settings = new ProcessSettings {
+            Arguments = args + " ./Example/build.cake -target=" + example
+        };
+        StartProcess(ps, settings);
+    });
+
 
 var target = Argument("target", "default");
 RunTarget(target);

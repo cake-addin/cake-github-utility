@@ -10,7 +10,12 @@ open Cake.GithubUtility.Github
 [<Sealed>]
 type GithubExtension =
 
-      [<CakeMethodAlias>]
-      [<Extension>]
-      static member CreateRawPath(context: ICakeContext, owner, repo, path) =
-            createRawPath owner repo path
+    [<CakeMethodAlias>]
+    [<Extension>]
+    static member CreateRawPath(context: ICakeContext, owner, repo, path) = 
+        createRawPath owner repo path
+
+    [<CakeMethodAlias>]
+    [<Extension>]
+    static member DownloadLatestAssets(context: ICakeContext, owner, repo, pass) =
+        downloadLatestAssets(owner, repo, pass)

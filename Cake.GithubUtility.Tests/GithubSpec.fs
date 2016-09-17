@@ -1,4 +1,15 @@
-﻿namespace Cake.GithubUtility.Tests
+﻿module GithubSpec
+    
+open Xunit
+open Cake.GithubUtility.Github
 
-type Class1() = 
-    member this.X = "F#"
+
+[<Fact>]
+let shouldDownloadAssets() =
+    
+    let pass = System.Environment.GetEnvironmentVariable("ghp");
+    let rs = downloadLatestAssets("bcircle", "easy-capture", pass)
+    
+    ()
+
+    

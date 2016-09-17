@@ -17,3 +17,12 @@ Task("Create-Raw-Path").Does(() => {
 });
 ```
 
+## Download lastest assets
+
+```csharp
+Task("Download-Assets").Does(() => {
+    var assets = DownloadLatestAssets("owner", "repository", "token");
+    assets.ToList().ForEach(Console.WriteLine);
+});
+```
+
