@@ -17,7 +17,7 @@ Task("Create-Raw-Path").Does(() => {
 });
 ```
 
-## Download lastest assets
+## Download latest assets
 
 ```csharp
 Task("Download-Assets").Does(() => {
