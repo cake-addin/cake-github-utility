@@ -5,6 +5,8 @@
 ## Install
 
 ```
+#addin "FSharp.Core&Version=4.3.4"
+#addin "Octokit&0.30.0"
 #addin "nuget:?package=Cake.GithubUtility"
 ```
 

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <Version>0.4.0</Version>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="Github.fs" />
+        <Compile Include="GithubAlias.fs" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Cake.Core" Version="0.28.1" />
+        <PackageReference Include="Octokit" Version="0.30.0" />
+        <PackageReference Include="FSharp.Core" Version="4.3.4" />
+    </ItemGroup>
+</Project>

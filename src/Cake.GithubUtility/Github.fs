@@ -10,10 +10,9 @@ let createRawPath owner repo path =
       let br = "master"
       sprintf "https://raw.githubusercontent.com/%s/%s/%s/%s" owner repo br path
 
-
-let downloadLatestAssets(owner: string, repo: string, pass: string) =
-    let createToken(pass) = 
-        new Credentials(pass)
+let downloadLatestAssets owner repo  pass =
+    let createToken(pass) =
+        new Credentials(pass: string)
 
     let product = ProductHeaderValue("my-cool-app")
     let client = GitHubClient(product)
@@ -29,11 +28,10 @@ let downloadLatestAssets(owner: string, repo: string, pass: string) =
             file.Write(response.Body, 0, response.Body.Length)
         (temp)
 
-
-    let release = client.Repository.Release.GetAll(owner, repo).Result
+    let release = client.Repository.Release.GetAll((owner : string), (repo: string)).Result
     let last =  release.FirstOrDefault()
 
-    let result = 
+    let result =
         match obj.ReferenceEquals(last, null) with
         | true ->
             []

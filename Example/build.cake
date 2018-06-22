@@ -1,12 +1,11 @@
-#r "../Cake.GithubUtility/bin/Debug/FSharp.Core.dll"
-#r "../Cake.GithubUtility/bin/Debug/Cake.GithubUtility.dll"
+#addin "FSharp.Core&Version=4.3.4"
+#addin "Octokit&0.30.0"
+#addin "nuget:http://192.168.0.109:7777/nuget?package=Cake.GitHubUtility"
 
-var pass = EnvironmentVariable("ghp");
-
-using Cake.GithubUtility.GithubAlias;
+var pass = EnvironmentVariable("GITHUB_TOKEN");
 
 Task("Raw").Does(() => {
-    var raw = CreateRawPath("cake-addin", "cake-github-utility", "Assets/logo.png");
+    var raw = CreateRawPath("wk-j", "cake-github-utility", "Assets/logo.png");
     Console.WriteLine(raw);
 });
 
