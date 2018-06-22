@@ -1,6 +1,4 @@
-## Cake.GithubUtility
-
-![](Assets/logo.png)
+## GitHub Utility
 
 ## Install
 
